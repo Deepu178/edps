@@ -17,7 +17,17 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 //   BrowserRouter as Router
 // } from "react-router-dom";
 
-
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    z:99999
+  },
+};
 
 export const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -112,12 +122,14 @@ export const NavBar = () => {
                 <a href="#"><img src={navIcon3} alt="" /></a>
               </div>
               {/* <HashLink > */}
-                <button className="vvd" onClick={openModal}><span>Let’s Connect</span></button>
+                <button  onClick={openModal}><span>Let’s Connect</span></button>
+                
                 <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         // style={customStyles}
-        className="200"
+        className="z-auto bg-blue-700"
+        
         >
           
           <button onClick={closeModal} className="float-right relative left-4 bottom-4 z-50"><XMarkIcon className="block h-6 w-6 bg-white text-blue-800 text-end" aria-hidden="true" /></button>

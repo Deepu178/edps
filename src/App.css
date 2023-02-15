@@ -94,12 +94,13 @@ nav.navbar {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
+  /* z-index: 1; */
   transition:  0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
+  z-index: 2;
 }
 nav.navbar a.navbar-brand {
     width: 9%;
@@ -571,7 +572,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 5px;
   border-radius: 20px;
   position: relative;
-  z-index: 0;
+  z-index:0;
   display: flex;
   align-items: center;
 }
