@@ -12,7 +12,7 @@ const app = express();
 
 const uri = process.env.DB;
 // const  = "mongodb+srv://user:password@cluster0.aqomnhv.mongodb.net/?retryWrites=true&w=majority"
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 
 mongoose.connect(uri, {
