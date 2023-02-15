@@ -2,13 +2,26 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+// const { Mongoose, default: mongoose } = require("mongoose");
+const mongoose = require('mongoose');
 require('dotenv').config({path:'config.env'});
 
 
 // server used to send send emails
 const app = express();
 
+const uri = process.env.DB;
+// const  = "mongodb+srv://user:password@cluster0.aqomnhv.mongodb.net/?retryWrites=true&w=majority"
 const PORT = 8080;
+
+
+mongoose.connect(uri, {
+    useNewUrlParser: true
+}, ).then(()=>{
+    console.log("Connections Successful")
+}).catch((err)=>{
+    console.log(`Connection error: ${err}`)
+})
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
@@ -59,4 +72,4 @@ router.post("/contact", (req, res) => {
 
 app.listen(PORT, (req, res)=>{
     console.log(`${PORT}`)
-})
+}) 
